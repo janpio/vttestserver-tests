@@ -11,7 +11,7 @@ services:
       KEYSPACES: test
       NUM_SHARDS: "1"
       MYSQL_BIND_HOST: "0.0.0.0"
-    options: --health-cmd="mysqladmin ping -h127.0.0.1 -P33577" --health-interval=5s --health-timeout=2s --health-retries=5
+
   vttestserver80:
     image: vitess/vttestserver:mysql80
     restart: always
@@ -22,4 +22,3 @@ services:
       KEYSPACES: test
       NUM_SHARDS: "1"
       MYSQL_BIND_HOST: "0.0.0.0"
-    options: --health-cmd="mysqladmin ping -h127.0.0.1 -P33807" --health-interval=5s --health-timeout=2s --health-retries=5
