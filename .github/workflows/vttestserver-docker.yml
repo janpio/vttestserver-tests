@@ -15,7 +15,7 @@ jobs:
       
       - run: docker ps -a
         if: ${{ always() }}
-      - run: docker logs vttestserver-tests_vttestserver80_1
+      - run: docker logs vttestserver-tests_vttestserver57_1
         if: ${{ always() }}
         
       - name: Sleep for 60 seconds
@@ -26,5 +26,5 @@ jobs:
           
       - run: docker ps -a
         if: ${{ always() }}
-      - run: docker logs vttestserver-tests_vttestserver80_1
+      - run: docker logs vttestserver-tests_vttestserver57_1
         if: ${{ always() }}
