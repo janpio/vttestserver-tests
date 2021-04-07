@@ -13,11 +13,16 @@ jobs:
 
       - run: docker-compose up -d
       
-      - name: Sleep for 30 seconds
+      - run: docker ps -a
+        if: ${{ always() }}
+      - run: docker logs vttestserver-tests_vttestserver80_1
+        if: ${{ always() }}
+        
+      - name: Sleep for 60 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '30s'
-      - run: mysql -h 127.0.0.1 -P 33577 -u root -pprisma -e "SHOW DATABASES;"
+          time: '60s'
+      - run: mysql -h 127.0.0.1 -P 33577 -u test -ptest -e "SHOW DATABASES;"
           
       - run: docker ps -a
         if: ${{ always() }}
